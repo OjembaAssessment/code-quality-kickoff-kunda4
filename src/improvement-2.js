@@ -5,7 +5,7 @@
  */
 
 // FUNCTION 2
-export default function processItems(items) {
+function processItems(items) {
   const processedItems = [];
   for (let i = 0; i < items.length; i++) {
     const item = items[i];

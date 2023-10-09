@@ -5,12 +5,7 @@
  */
 
 // FUNCTION 3
-export default function findLargestNumber(numbers) {
-  let largest = numbers[0];
-  for (let i = 1; i < numbers.length; i++) {
-    if (numbers[i] > largest) {
-      largest = numbers[i];
-    }
-  }
-  return largest;
+function findMaximumNumber(numbers) {
+  return Math.max(...numbers);
 }
+console.log(findMaximumNumber([3, 42, 5, 6, 7, 8, 9]));
