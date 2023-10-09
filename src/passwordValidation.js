@@ -9,7 +9,7 @@ export const forbiddenPasswords = ["amG84h6yeQ", "mc9Q20pdjH", "jnT6Q2f8U5"];
 export default function isValidPassword(password = "") {
   // The following line ensures, that password is always a string, like the number 128 -> string "128"
   if (typeof password !== "string") password = String(password);
-
+  if (password.length !== 0) return false;
   if (password.match(/[a - z][A - Z]/)) return true;
   if (password.match(/\w/)) return false;
   if (password.match(/\d+/)) return false;
