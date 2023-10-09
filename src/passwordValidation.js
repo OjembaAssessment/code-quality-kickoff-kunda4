@@ -13,7 +13,6 @@ export default function isValidPassword(password = "") {
   if (password.match(/[a - z][A - Z]/)) return true;
   if (password.match(/\w/)) return false;
   if (password.match(/\d+/)) return false;
-  if (!password.match(/[0-9][a-z][A-Z]{4,}/)) return false;
   const setOfPassword = new Set([...password]);
   if (setOfPassword.size < 4) return false;
   return true;
