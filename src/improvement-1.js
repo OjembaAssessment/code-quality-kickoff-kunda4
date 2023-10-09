@@ -5,12 +5,12 @@
  */
 
 // FUNCTION 1
-export default function cntRbt(ls) {
-  var cnt = 0;
-  for (var i = 0; i < ls.length; i++) {
-    if (ls[i] == "R") {
-      cnt++;
-    }
-  }
-  return cnt;
+export default function countR(str) {
+  let count = 0;
+  str.split("").map((elt, index) => {
+    if (str[index] == "R") count++;
+  });
+
+  return count;
 }
+console.log(countR("React"));
