@@ -5,13 +5,10 @@
  */
 
 // FUNCTION 2
-function processItems(items) {
-  const processedItems = [];
-  for (let i = 0; i < items.length; i++) {
-    const item = items[i];
-    if (item.type === "Food") {
-      processedItems.push(item);
-    }
-  }
-  return processedItems;
+
+export default function processItems(items) {
+  return items.filter((elt, index) => items[index].type === "Food");
 }
+console.log(
+  processItems([{ type: "Food" }, { type: "Food" }, { type: "Faod" }])
+);
