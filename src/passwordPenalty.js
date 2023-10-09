@@ -5,21 +5,16 @@
  * @param {string} password
  * @returns {number}
  */
-function penaltyPoints(password = "") {
+export default function penaltyPoints(password = "") {
   // The following line ensures, that password is always a string, like the number 128 -> string "128"
+  if (password === null) return 0;
   if (typeof password !== "string") password = String(password);
-  let count = {};
-  let myArr = [];
-  let myPass = password.toLowerCase().split("");
-  myPass.map((elt) => {
-    if (count[elt]) {
-      count[elt]++;
-    } else {
-      count[elt] = 1;
-    }
-    if (count[elt] >= 2) myArr.push(elt, count[elt]);
+  let groupedChar = password.match(/([a-zA-Z0-9])\1+/g);
+  if (!groupedChar) return 0;
+  let count = 0;
+  groupedChar.map((elt) => {
+    if (elt.length == 2) return (count += 1);
+    if (elt.length > 2) return (count += 2);
   });
-  return myArr;
+  return count;
 }
-
-console.log(penaltyPoints((password = "U2jSS277pQ")));
